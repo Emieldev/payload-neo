@@ -88,8 +88,10 @@ export default class PushcartCommand extends Command {
 
         if (result === "CAP") return msg.channel.send(lang.pushcart_fail_maxpoints);
 
-        const secondsRemaining = Math.round(((user.lastPushed + 1000 * 30) - Date.now()) / 1000);
-        if (result === "COOLDOWN") return msg.channel.send(lang.pushcart_fail_cooldown.replace("%time", secondsRemaining));
+        if (result === "COOLDOWN") {
+            const secondsRemaining = Math.round(((user.lastPushed + 1000 * 30) - Date.now()) / 1000);
+            return msg.channel.send(lang.pushcart_fail_cooldown.replace("%time", secondsRemaining));
+        }
 
         const numberPushed: number = serverFeetPushed + numberToPush;
 
