@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc --build -w tsconfig.json",
-    "run": "node ./dist/payload"
+    "run": "nodemon ./dist/payload"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +15,7 @@
     "discord-akairo": "^8.0.0",
     "discord.js": "^12.2.0",
     "mongoose": "^5.9.11",
+    "nodemon": "^2.0.4",
     "puppeteer": "^3.0.2",
     "steamid": "^1.1.3"
   },
