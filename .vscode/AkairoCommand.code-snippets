@@ -15,29 +15,56 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-
-	"akcmd": {
+	"akcmd-reg": {
 		"scope": "typescript",
 		"prefix": "akcmd",
 		"body": [
 			"import { Command } from \"discord-akairo\";",
 			"import { Message } from \"discord.js\";",
 			"import { PrefixSupplier } from \"discord-akairo\";",
+			"import Language from \"../../../languages/Language\"",
 			"",
 			"export default class $1 extends Command {",
-   				"constructor() {",
-        		"super(\"$1\", {",
-            		"category: '$2',",
-            		"aliases: [],",
-        		"})",
-    		"}",
-			"",
-    		"async exec(msg: Message) {",
-        		"const langset = this.client.settings.get(msg.guild?.id, \"language\", \"en-US\");",
-        		"const prefix = this.client.settings.get(msg.guild?.id, \"prefix\", (this.handler.prefix as PrefixSupplier)(msg));",
-        		"const lang = require(`../../../languages/${langset}`);",
+			"constructor() {",
+			"super(\"$1\", {",
+			"category: '$2',",
+			"aliases: [],",
+			"})",
 			"}",
-		"}"
+			"",
+			"async exec(msg: Message) {",
+			"const langset = this.client.settings.get(msg.guild?.id, \"language\", \"english\");",
+			"const prefix = this.client.settings.get(msg.guild?.id, \"prefix\", (this.handler.prefix as PrefixSupplier)(msg));",
+			"const lang: Language = require(`../../../languages/${langset}`);",
+			"}",
+			"}"
+		]
+	},
+
+	"akcmd-auto": {
+		"scope": "typescript",
+		"prefix": "akcmd",
+		"body": [
+			"import { Command } from \"discord-akairo\";",
+			"import { Message } from \"discord.js\";",
+			"import { PrefixSupplier } from \"discord-akairo\";",
+			"import Language from \"../../../languages/Language\"",
+			"",
+			"export default class $1 extends Command {",
+			"constructor() {",
+            "description: {",
+                "name: \"$1\"",
+			"},",
+            "category: 'auto',",
+            "regex: /http(s|):\/\/(www\\.|)logs\\.tf\/\\d+/gi",
+			"}",
+			"",
+			"async exec(msg: Message) {",
+			"const langset = this.client.settings.get(msg.guild?.id, \"language\", \"english\");",
+			"const prefix = this.client.settings.get(msg.guild?.id, \"prefix\", (this.handler.prefix as PrefixSupplier)(msg));",
+			"const lang: Language = require(`../../../languages/${langset}`);",
+			"}",
+			"}"
 		]
 	}
 }

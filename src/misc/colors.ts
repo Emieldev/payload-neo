@@ -1,4 +1,4 @@
-export enum colors {
+export enum embedColors {
     DEFAULT = 0,
     AQUA = 1752220,
     GREEN = 3066993,
@@ -26,12 +26,12 @@ export enum colors {
     BLACK = 0
 }
 
-enum embedColors {
-    ADMIN = colors.RED,
-    PAYLOAD = colors.YELLOW,
+enum colors {
+    ADMIN = embedColors.RED,
+    PAYLOAD = embedColors.YELLOW,
     USER = 29913,
     COMMAND = 16098851,
-    OTHER = colors.LIGHT_GREY
+    OTHER = embedColors.LIGHT_GREY
 }
 
-export default embedColors
+export default colors

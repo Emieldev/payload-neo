@@ -3,6 +3,7 @@ import { Message } from "discord.js";
 import { MessageEmbed } from "discord.js";
 import colors from "../../misc/colors";
 import { PrefixSupplier } from "discord-akairo";
+import Language from "../../../languages/Language";
 
 export default class HelpCommand extends Command {
     constructor() {
@@ -12,7 +13,7 @@ export default class HelpCommand extends Command {
             args: [
                 {
                     id: "command",
-                    type: 'commandAlias'
+                    type: "commandAlias"
                 }
             ],
             description: {
@@ -24,9 +25,9 @@ export default class HelpCommand extends Command {
     async exec(msg: Message, { command }: { command: Command }) {
         const langset = this.client.settings.get(msg.guild?.id, "language", "en-US");
         const prefix = this.client.settings.get(msg.guild?.id, "prefix", (this.handler.prefix as PrefixSupplier)(msg));
-        const lang = require(`../../../languages/${langset}`);
+        const lang: Language = require(`../../../languages/${langset}`);
         const embed = new MessageEmbed();
-
+        
         if (!command) {
             let commandArray = [];
             let autoCommandArray = [];
@@ -55,7 +56,7 @@ export default class HelpCommand extends Command {
         const perms = `# ${lang.help_embedpermsuser} #\n${command.userPermissions ?? "SEND_MESSAGES"}\n\n# ${lang.help_embedpermsbot} #\n${command.clientPermissions ?? "SEND_MESSAGES"}`;
         const permsEmbed = `\`\`\`md\n${perms}\`\`\``;
 
-        embed.setTitle(command.aliases[0]);
+        embed.setTitle(command.aliases[0] ?? command.description.name);
         embed.setDescription(lang[command.aliases[0]] ?? lang.commands_nosetdescription);
         if (command.description.usage) embed.addField(lang.help_embedusage, usage);
         if (command.aliases.length > 1) embed.addField(lang.help_embedaliases, command.aliases.map(a => a).join(", "));

@@ -3,6 +3,7 @@ import { Message } from "discord.js";
 import { User } from "../../models/User";
 import { weightedRandom } from "../../util/random";
 import { Server } from "../../models/Server";
+import Language from "../../../languages/Language";
 
 interface IUser {
     feetPushed: number,
@@ -44,8 +45,21 @@ export default class PushcartCommand extends Command {
     }
 
     async exec(msg: Message) {
-        const langset = this.client.settings.get(msg.guild?.id, "language", "en-US");
-        const lang = require(`../../../languages/${langset}`);
+        let lang: Language;
+        switch (msg.util.parsed.alias) {
+            case "pushcart":
+                lang = require(`../../../languages/en-US`);
+                break;
+            case "pushkart":
+                lang = require(`../../../languages/ru-RU`);
+                break;
+            case "pchajwozek":
+                lang = require(`../../../languages/pl-PL`);
+                break;
+            case "empujacarritos":
+                lang = require(`../../../languages/es-ES`);
+                break;
+        }
 
         let user: IUser = this.client.settings.get(msg.author.id, "fun.payload", new User({
             id: msg.author.id,
@@ -90,28 +104,13 @@ export default class PushcartCommand extends Command {
 
         if (result === "COOLDOWN") {
             const secondsRemaining = Math.round(((user.lastPushed + 1000 * 30) - Date.now()) / 1000);
-            return msg.channel.send(lang.pushcart_fail_cooldown.replace("%time", secondsRemaining));
+            return msg.channel.send(lang.pushcart_fail_cooldown.replace("%time", secondsRemaining.toString()));
         }
 
         const numberPushed: number = serverFeetPushed + numberToPush;
 
         await this.client.settings.set(msg.guild.id, "fun.payloadFeetPushed", numberPushed);
 
-        switch (msg.util.parsed.alias) {
-            case "pushcart":
-                await msg.channel.send(lang.pushcart_success.replace('%units', numberToPush).replace('%total', numberPushed));
-                break;
-
-            case "pushkart":
-                await msg.channel.send(lang.pushkart_success.replace('%units', numberToPush).replace('%total', numberPushed));
-                break;
-
-            case "pchajwozek":
-                await msg.channel.send(lang.pchajwozek_success.replace('%units', numberToPush).replace('%total', numberPushed));
-                break;
-            case "empujacarritos":
-                await msg.channel.send(lang.empujacarritos_success.replace('%units', numberToPush).replace('%total', numberPushed));
-                break;
-        }
+        await msg.channel.send(lang.pushcart_success.replace('%units', numberToPush.toString()).replace('%total', numberPushed.toString()));
     }
 }
