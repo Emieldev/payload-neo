@@ -76,6 +76,7 @@ type Language = {
 
     purge_success: string,
 
+    pushcart_success: string,
     pushcart_fail_nosubcmd: string,
     pushcart_fail_cooldown: string,
     pushcart_fail_maxpoints: string,
@@ -86,11 +87,6 @@ type Language = {
     pushcart_userembedfooter: string,
     pushcart_serverembedtitle: string,
     pushcart_giftsuccess: string,
-
-    pushcart_success: string,
-    pushkart_success: string,
-    pchajwozek_success: string,
-    empujacarritos_success: string,
 
     restrict_fail_deny: string,
     restrict_success: string,

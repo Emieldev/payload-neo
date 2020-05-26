@@ -17,7 +17,7 @@ export default class PushcartCommand extends Command {
     constructor() {
         super("pushcart", {
             category: 'pushcart',
-            aliases: ["pushcart", "pushkart", "pchajwozek", "empujacarritos"],
+            aliases: ["pushcart", "pushkart", "pchajwozek", "empuja"],
             channel: 'guild'
         })
 
@@ -48,16 +48,16 @@ export default class PushcartCommand extends Command {
         let lang: Language;
         switch (msg.util.parsed.alias) {
             case "pushcart":
-                lang = require(`../../../languages/en-US`);
+                lang = require(`../../../languages/english`);
                 break;
             case "pushkart":
-                lang = require(`../../../languages/ru-RU`);
+                lang = require(`../../../languages/russian`);
                 break;
             case "pchajwozek":
-                lang = require(`../../../languages/pl-PL`);
+                lang = require(`../../../languages/polish`);
                 break;
-            case "empujacarritos":
-                lang = require(`../../../languages/es-ES`);
+            case "empuja":
+                lang = require(`../../../languages/spanish`);
                 break;
         }
 

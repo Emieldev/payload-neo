@@ -87,11 +87,6 @@
 	"pushcart_serverembedtitle": "Pushcart Server Leaderboard",
 	"pushcart_giftsuccess": "ðŸŽ %tag has gifted **%amt** points to %totag!",
 	
-	"pushcart_success": "<:payload:656955124098269186> Pushed the cart forward **%units** feet (%total total).",
-	"pushkart_success": "<:payload:656955124098269186> Толкнул тележку вперед на **%units** футов (всего %total).",
-	"pchajwozek_success": "<:payload:656955124098269186> Dopchałeś wózek o **%units** stóp (%total łącznie)",
-	"empujacarritos_success": "<:payload:656955124098269186> Empujó el carrito hacia delante **%units** metros (En total: %total).",
-	
 	"restrict_fail_deny": "Restricting the restriction commands from being used is probably not what you want to do...",
 	"restrict_success": "Restricted in %channels: ```%cmds```",
 	"unrestrict_success": "Unrestricted in %channels: ```%cmds```",

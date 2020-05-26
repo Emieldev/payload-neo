@@ -1,9 +1,10 @@
 {
   "name": "payloadcommand",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "3.0.0",
+  "description": "A discord bot written in TypeScript",
+  "main": "dist/payload.js",
   "scripts": {
+    "build-all": "tsc --build tsconfig.json",
     "build": "tsc --build -w tsconfig.json",
     "run": "nodemon ./dist/payload"
   },

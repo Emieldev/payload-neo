@@ -23,7 +23,7 @@ export default class HelpCommand extends Command {
     }
 
     async exec(msg: Message, { command }: { command: Command }) {
-        const langset = this.client.settings.get(msg.guild?.id, "language", "en-US");
+        const langset = this.client.settings.get(msg.guild?.id, "language", "english");
         const prefix = this.client.settings.get(msg.guild?.id, "prefix", (this.handler.prefix as PrefixSupplier)(msg));
         const lang: Language = require(`../../../languages/${langset}`);
         const embed = new MessageEmbed();

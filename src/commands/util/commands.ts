@@ -14,7 +14,7 @@ export default class CommandsCommand extends Command {
 
     async exec(msg: Message) {
         const prefix = this.client.settings.get(msg.guild?.id, "prefix", (this.handler.prefix as PrefixSupplier)(msg));
-        const langset = this.client.settings.get(msg.guild?.id, "language", "en-US");
+        const langset = this.client.settings.get(msg.guild?.id, "language", "english");
         const lang = require(`../../../languages/${langset}`);
 
         const embed = new MessageEmbed();

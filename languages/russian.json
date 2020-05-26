@@ -1,6 +1,15 @@
 {
+    "parseargs_fail_argsmissing": "Missing `%argsname` argument. Type `%prefixhelp %fullcommandname` to learn more.",
+	"parseargs_fail_numberarg": "`%argsname` argument must be a number. Type `%prefixhelp %fullcommandname` to learn more.",
+	"parseargs_fail_lessthan": "`%argsname` must be less than `%argsnumber`. Type `%prefixhelp %fullcommandname` to learn more.",
+	"parseargs_fail_greaterthan": "`%argsname` must be greater than `%argsnumber`. Type `%prefixhelp %fullcommandname` to learn more.",
+	"parseargs_fail_notaccepted": "`%argsname` argument must be one of the following: %argoptions. Type `%prefixhelp %fullcommandname` to learn more.",
+	"parseargs_fail_argless": "`%argsname` argument must have less than %argnum characters. Type `%prefixhelp %fullcommandname` to learn more.",
+	"parseargs_fail_argmore": "`%argsname` argument must have more than %argnum characters. Type `%prefixhelp %fullcommandname` to learn more.",
+	"parseargs_fail_boolean": "`%argsname` argument must be either \"true\" or \"false\". Type `%prefixhelp %fullcommandname` to learn more.",
+	
 	"eightball_noquestion": "You must ask the 8ball a question.",
-	"eightball_answer": "ðŸŽ± **%answer**",
+	"eightball_answer": "🎱 **%answer**",
 	
 	"bruh_nouser": "bruh",
 	"bruh_user": "bruh %mention",
@@ -17,17 +26,9 @@
 	"combine_success": "**Done!** %logpath",
 	
 	"commands_embedtitle": "Server Commands",
-	"commands_embedfooter": "Need help? %prefixhelp [command name] for more information.",
+	"commands_embedfooter": "Need help? %prefixhelp [command name].",
 	"commands_commands": "Commands",
 	"commands_autoresponses": "Auto Responses",
-	"commands_nosetdescription": "No set description.",
-	
-	"help_embedusage": "Usage",
-	"help_embedpermissionshead": "Permissions Needed",
-	"help_embedpermsuser": "For User",
-	"help_embedpermsbot": "For Bot",
-	"help_embedaliases": "Aliases",
-	"help_embedfooter": "Requested by %requester. For list of commands: %prefixcommands",
 	
 	"config_error_invalidsyntax": "Invalid syntax. Type `%prefixhelp config` to learn more.",
 	"config_error_invalidsubcommand": "Invalid subcommand. Type `%prefixhelp config` to learn more.",
@@ -41,13 +42,19 @@
 	"face_fail_novalidface": "No valid face found.",
 	"face_error": "An error occured while trying to detect faces.",
 	
+	"help_embedusage": "Usage",
+	"help_embedpermissionshead": "Permissions Needed",
+	"help_embedpermissionsbody": "```md\n # For User #\n%permsuser\n For Bot #\n%permsbot```",
+	"help_embedsubcmds": "Subcommands",
+	"help_embedfooter": "Requested by %requester. For list of commands: %prefixcommands",
+	
 	"info_embedtitle": "Currently serving **%users** users in **%servers** servers!",
-	"info_embedbody": "Join the official %user discord server for help and suggestions: https://discord.gg/gYnnMYz\n\nInvite %user to your server with `%prefixinvite`!\nHelp translate for Payload: https://crowdin.com/project/payload\n\nA huge thanks to our translators: miko, supra, 24.",
-	"info_embedfooter": "Created and maintained by %creator | Version %version",
+	"info_embedbody": "Join the official %user discord server for help and suggestions: https://discord.gg/gYnnMYz\n\nInvite %user to your server with `%prefixinvite`!",
+	"info_embedfooter": "Created by %creator | Version %version",
 	
 	"language_fail_invalidsub": "Invalid subcommand. Type `%prefixhelp language` to learn more.",
 	"language_default": "The guild language is: `%language`",
-	"language_delete_success": "Language deleted! Default language: `english`",
+	"language_delete_success": "Language deleted! Default language: `en-US`",
 	"language_delete_embedfooter": "Guild language updated by %author",
 	"language_set_fail_oldnew": "Your old language is the same as your new one!",
 	"language_set_fail_nonew": "You didn't specify a new language!",
@@ -55,13 +62,10 @@
 	"language_set_success_embedtitle": "Guild language updated by %author",
 	
 	"link_fail_invalidid": "Invalid `<Steam ID>` argument.",
-	"link_success": "Successfully set new SteamID.",
+	"link_success": "Successfully overrode old Steam ID with `steamid` for `%tag`.",
 	
 	"log_fail_noid": "User does not have their Steam ID linked. Steam IDs can be linked to your account using `%prefixlink <Steam ID>`.",
 	"log_fail_nologhistory": "User does not have a log history.",
-	
-	"music_fail_isplaying": "Another user is already playing music!",
-	"music_error": "Error: %err",
 	
 	"prefix_fail_invalidsub": "Invalid subcommand. Type `%prefixhelp prefix` to learn more.",
 	"prefix_default": "The guild prefix is: `%prefix`",
@@ -74,23 +78,19 @@
 	
 	"profile_points": "Points",
 	
-	"purge_success": "ðŸ—‘ Deleted **%size** messages in **%sec** seconds.",	
+	"purge_success": "🗑 Deleted **%size** messages in **%sec** seconds.",	
 	
 	"pushcart_fail_nosubcmd": "Invalid subcommand. Type `%prefixhelp pushcart` to learn more.",
-	"pushcart_fail_cooldown": "You must wait 30 seconds before pushing the cart again (%time left).",
-	"pushcart_fail_maxpoints": "You have reached the max number of points for today. Come back tomorrow!",
+	"pushcart_fail_cooldown": "Вы должны подождать 30 секунд, прежде чем снова толкать тележку (%time осталось).",
+	"pushcart_fail_maxpoints": "Вы набрали максимальное количество баллов за сегодня. Возвращайтесь завтра!",
 	"pushcart_fail_notarget": "Invalid `<user mention>` argument. Type `%prefixhelp %cmd` to learn more.",
 	"pushcart_fail_toomanypoints": "Too many points specified. The most you can gift is: %points.",
 	"pushcart_fail_noleaderboard": "Leaderboard has not yet been generated. Try again in a couple minutes.",
 	"pushcart_userembedtitle": "Pushcart Leaderboard",
 	"pushcart_userembedfooter": "Last updated: %updated",
 	"pushcart_serverembedtitle": "Pushcart Server Leaderboard",
-	"pushcart_giftsuccess": "ðŸŽ %tag has gifted **%amt** points to %totag!",
-	
-	"pushcart_success": "<:payload:714869485286326284> Pushed the cart forward **%units** feet (%total total).",
-	"pushkart_success": "<:payload:714869485286326284> Толкнул тележку вперед на **%units** футов (всего %total).",
-	"pchajwozek_success": "<:payload:714869485286326284> Dopchałeś wózek o **%units** stóp (%total łącznie)",
-	"empujacarritos_success": "<:payload:714869485286326284> Empujó el carrito hacia delante **%units** metros (En total: %total).",
+	"pushcart_giftsuccess": "🎁 %tag has gifted **%amt** points to %totag!",
+	"pushcart_success": "<:payload:714869485286326284> Толкнул тележку вперед на **%units** футов (всего %total).",
 	
 	"restrict_fail_deny": "Restricting the restriction commands from being used is probably not what you want to do...",
 	"restrict_success": "Restricted in %channels: ```%cmds```",
@@ -110,14 +110,7 @@
 	"rgl_embeddesc_verified": ":white_check_mark: Verified",
 	"rgl_embeddesc_earnings": "Total Earnings",
 	
-	"rtd_roll": "ðŸŽ² **%roll**",
-	
-	"settings_fail_nosubcmd": "Invalid subcommand. Type `%prefixhelp settings` to learn more.",
-	"settings_all": "Successfully set Snipe permissions to: `ALL USERS`",
-	"settings_admin": "Successfully set Snipe permissions to: `MANAGE MESSAGES`",
-	
-	"dashboard_admin": "Succsessfully set Dashboard Permissions to: `ADMIN`",
-	"dashboard_mod": "Succsessfully set Dashboard Permissions to: `MODERATORS`",
+	"rtd_roll": "🎲 **%roll**",
 	
 	"snipe_fail_nomsg": "No messages to snipe!",
 	"snipe_fail_max": "Snipe cache doesn't go that far!",
@@ -128,5 +121,5 @@
 	"translate_embedfooter": "Made possible by Google Translate.",
 	
 	"servers_offline": "Server is offline.",
-    "servers_players": "players"
+	"servers_players": "players"
 }
