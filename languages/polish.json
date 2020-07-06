@@ -65,7 +65,7 @@
     "profile_points": "Punkty",
     "purge_success": "🗑 Deleted **%size** messages in **%sec** seconds.",
     "pushcart_fail_nosubcmd": "Invalid subcommand. Type `%prefixhelp pushcart` to learn more.",
-    "pushcart_fail_cooldown": "Musisz poczekać 30 sekund zanim będziesz mógł popchać wózek ponownie (%time sekund)..",
+    "pushcart_fail_cooldown": "Musisz poczekać 30 sekund zanim będziesz mógł popchać wózek ponownie (%time sekund).",
     "pushcart_fail_maxpoints": "Dopchałeś już najdalej ile możesz dzisiaj. Wróć jutro, by dopchać wózek dalej.",
     "pushcart_fail_notarget": "Invalid `<user mention>` argument. Type `%prefixhelp %cmd` to learn more.",
     "pushcart_fail_toomanypoints": "Too many points specified. The most you can gift is: %points.",

@@ -7,7 +7,6 @@ import MongoProvider from "../providers/MongoProvider";
 export default class PayloadClient extends AkairoClient {
     public settings: MongoProvider = new MongoProvider(config.MONGODB_URI, { modelNames: ["User", "Server", "Client"] });
 
-
     public commandHandler: CommandHandler = new CommandHandler(this, {
         directory: resolve(join(__dirname, "../commands/")),
         aliasReplacement: /-/g,

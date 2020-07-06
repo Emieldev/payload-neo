@@ -1,14 +1,5 @@
 dist/
 node_modules/
 
-screenlog.0
-
-src/config
-
 *.env
-config.ts
-
-*.rest
-
-secret.*
-views/secret
+config.*

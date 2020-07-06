@@ -1,6 +1,5 @@
 import { Command } from "discord-akairo";
 import { Message, GuildMember, User } from "discord.js";
-import { PrefixSupplier } from "discord-akairo";
 import Language from "../../../languages/Language"
 
 export default class PurgeCommand extends Command {
@@ -42,7 +41,7 @@ export default class PurgeCommand extends Command {
         });
 
         if (user) {
-            channelMessages = channelMessages.filter(foundMsg => {
+            channelMessages = channelMessages.filter((foundMsg: Message) => {
                 msg.channel.stopTyping(true);
                 return msg.mentions.users.map(user => user.id).includes(foundMsg.author.id);
             });

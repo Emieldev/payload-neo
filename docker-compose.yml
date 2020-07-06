@@ -1,0 +1,7 @@
+version: '3.5'
+
+services: 
+    bot:
+        container_name: "payload"
+        image: "c43721/payload-neo"
+        restart: always
