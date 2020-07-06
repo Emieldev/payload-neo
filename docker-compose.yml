@@ -5,3 +5,14 @@ services:
         container_name: "payload"
         image: "c43721/payload-neo"
         restart: always
+        ports: 
+            - '3000:3000'
+        depends_on: 
+            - db
+        env_file:
+            - e.env
+    db:
+        container_name: "mongodb"
+        image: mongo
+        ports: 
+            - '27017:27017'

@@ -1,11 +1,12 @@
 import { AkairoClient, CommandHandler } from "discord-akairo";
 import { join, resolve } from "path";
 import config from "../config";
+require('dotenv').config();
 
 import MongoProvider from "../providers/MongoProvider";
 
 export default class PayloadClient extends AkairoClient {
-    public settings: MongoProvider = new MongoProvider(config.MONGODB_URI, { modelNames: ["User", "Server", "Client"] });
+    public settings: MongoProvider = new MongoProvider(process.env.MONGO_URI, { modelNames: ["User", "Server", "Client"] });
 
     public commandHandler: CommandHandler = new CommandHandler(this, {
         directory: resolve(join(__dirname, "../commands/")),
@@ -36,6 +37,6 @@ export default class PayloadClient extends AkairoClient {
 
     public async start() {
         await this.load();
-        return this.login(config.TOKEN);
+        return this.login(process.env.BOT_TOKEN);
     }
 }
